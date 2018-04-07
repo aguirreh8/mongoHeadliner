@@ -17,10 +17,22 @@ const ArticleSchema = new Schema({
 		type: String
 	},
 
-	note: {
-		type: Schema.Types.ObjectId,
-		ref: "Note"
-	}
+	created: {
+		type: Date,
+		default: Date.now
+	},
+
+	saved: {
+		type: Boolean,
+		default: false
+	},
+
+	notes: [ 
+		{
+			type: Schema.Types.ObjectId,
+			ref: "Note"
+		} 
+	]
 });
 
 const Article = mongoose.model("Article", ArticleSchema);

@@ -1,0 +1,19 @@
+<div class="row">
+	<div class="col">
+		<button type="submit" name="" id="scrape">Scrape</button>
+	</div>
+</div>
+<div class="row">
+	{{#each results}}
+		<div class="card" style="width: 100%">
+			<div class="card-header">
+				<h4><a href="http://www.nintendolife.com/{{link}}">{{title}}</a></h4>	
+			</div>
+			<div class="card-body">
+				<p>{{description}}</p>
+				<button type="submit" class="saveArticle btn btn-info" data-id={{_id}}>Save Article</button>
+			</div>			
+		</div>
+	{{/each}}
+</div>
+

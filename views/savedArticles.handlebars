@@ -1,0 +1,49 @@
+<div class="row">
+	{{#each results}}
+		<div class="card" style="width: 100%">
+			<div class="card-header">
+				<h4><a href="http://www.nintendolife.com/{{link}}">{{title}}</a></h4>	
+			</div>
+			<div class="card-body">
+				<p>{{description}}</p>
+				<button type="submit" class="removeArticle btn btn-danger" data-id={{_id}}>Remove Article</button>
+				<button type="submit" class="viewNotes btn btn-info" data-id={{_id}}>View Notes</button>
+			</div>			
+		</div>
+	{{/each}}
+</div>
+
+<div class="modal fade" id="notesModal" tabindex="-1" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Add note</h5>
+				<button type="button" class="close" data-dismiss="modal">
+					<span>&times;</span>
+				</button>
+			</div>
+			<ul class="list-group" id="notesList">
+				<li class="list-group-item">
+				Wassup
+				<button class="btn btn-danger" style="float:right" data-id="">X</button>
+			</li>
+
+			</ul>
+			<div class="modal-body">
+				<form>
+					<div class="form-group">
+						<label for="noteTitle" class="col-form-label">Title:</label>
+						<input type="text" class="form-control" id="noteTitle">
+					</div>
+					<div class="form-group">
+						<label for="noteMessage" class="col-form-label">Message:</label>
+						<textarea class="form-control" id="noteMessage"></textarea>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-success" id="saveNote" data-dismiss="modal" data-id="">Save Note</button>
+			</div>
+		</div>
+	</div>	
+</div>
