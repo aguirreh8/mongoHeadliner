@@ -52,7 +52,8 @@ module.exports = function(app) {
 	})
 
 	app.delete("/api/removeNote/:id", function(req, res) {
-		db.Article.deleteOne( {_id: req.params.id})
+		console.log(req.params.id);
+		db.Note.remove({_id: req.params.id})
 		.then(function(deteled) {
 			console.log("success?")
 		});

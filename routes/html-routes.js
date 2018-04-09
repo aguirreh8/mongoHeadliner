@@ -4,7 +4,7 @@ const db = require("../models");
 
 module.exports = function(app) {
 	app.get("/", function(req, res) {
-		db.Article.find().sort({ created: 1 })
+		db.Article.find().sort({ created: -1 })
 		.then(function(results) {
 			res.render("index", {results : results});
 		})
