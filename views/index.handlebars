@@ -1,13 +1,13 @@
 <div class="row">
 	<div class="col">
-		<button type="submit" name="" id="scrape">Scrape</button>
+		<button type="submit" class="btn btn-primary" id="scrape">Get new articles</button>
 	</div>
 </div>
 <div class="row">
 	{{#each results}}
 		<div class="card" style="width: 100%; margin:5px 0px 5px 0px">
 			<div class="card-header">
-				<h4><a href="http://www.nintendolife.com/{{link}}">{{title}}</a></h4>	
+				<h4><a href="http://www.nintendolife.com/{{link}}" class="text-dark" target="_blank">{{title}}</a></h4>	
 			</div>
 			<div class="card-body">
 				<p>{{description}}</p>

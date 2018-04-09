@@ -29,6 +29,7 @@ module.exports = function(app) {
 
 			})
 		})
+		res.render("index");
 	});
 
 	app.get("/api/getNotes/:id", function(req, res) {
@@ -52,10 +53,9 @@ module.exports = function(app) {
 	})
 
 	app.delete("/api/removeNote/:id", function(req, res) {
-		console.log(req.params.id);
 		db.Note.remove({_id: req.params.id})
 		.then(function(deteled) {
-			console.log("success?")
+			console.log("Note deleted");
 		});
 	})
 

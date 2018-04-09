@@ -3,7 +3,7 @@ $(document).ready(function() {
 	$("#scrape").click(function(e) {
 		e.preventDefault();
 		$.get("/api/scrape", function(data) {
-			console.log(data);
+			console.log("Data scraped");
 		})
 	});
 
@@ -60,7 +60,6 @@ $(document).ready(function() {
 	$(document).on("click", ".delete-note", function(e) {
 		e.preventDefault();
 		const thisID = $(this).data("id");
-		console.log(thisID);
 		$.ajax({
 			url: `/api/removeNote/${$(this).data("id")}`,
 			type: "DELETE"
@@ -81,6 +80,7 @@ $(document).ready(function() {
 		})
 		.then(function(data) {
 			alert("Article removed.");
+			location.reload();
 		})
 		
 	})

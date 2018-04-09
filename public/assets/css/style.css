@@ -1,0 +1,7 @@
+body {
+	background-image: url("../img/background.jpg");
+}
+
+.jumbotron {
+	background: linear-gradient(to bottom, transparent 0%, white 100%), url(../img/nintendo.jpg)
+}

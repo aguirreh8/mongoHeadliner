@@ -13,8 +13,10 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 app.use(express.static('public'));
 
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadliner";
+
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/mongoHeadliner");
+mongoose.connect(MONGODB_URI);
 
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
